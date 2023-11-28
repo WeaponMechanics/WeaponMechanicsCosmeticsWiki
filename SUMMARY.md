@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Home](README.md)
-* [General](general.md)
-* [Other](other.md)
-* [Show Time](show-time.md)
+* [Cosmetics](cosmetics.md)
 * [Trails](trails.md)
+* [Show Time](show-time.md)
+* [Other](other.md)

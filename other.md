@@ -1,7 +1,5 @@
 # Other
 
-This page contains links to the WeaponMechanics wiki that has WeaponMechanicsCosmetics features.
+Some features of WeaponMechanicsCosmetics are documented on other wikis.&#x20;
 
-### [Pumpkin\_Overlay](https://github.com/WeaponMechanics/MechanicsMain/wiki/Scoping#pumpkin\_overlay-truefalse)
-
-### [Hand](https://github.com/WeaponMechanics/MechanicsMain/wiki/Skins#hand-skin)
+<table data-view="cards"><thead><tr><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center">Skin</td><td>Add cosmetic skins to your server as a EULA friendly perk</td><td><a href="http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/skin">Skin</a></td></tr><tr><td align="center">Pumpkin_Overlay</td><td>Put a pumpkin on the player's head to add a resourcepack scope overlay</td><td><a href="http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/scope#pumpkin_overlay">Pumpkin_Overlay</a></td></tr><tr><td align="center">Hand</td><td>Add an item in the player's offhand to make it look like they are carrying the weapon with 2 hands.</td><td></td></tr></tbody></table>

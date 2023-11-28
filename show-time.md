@@ -13,13 +13,13 @@
 
 Each option here uses the Timer serializer.
 
-* [`Delay_Between_Shots`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Shooting#delay\_between\_shots-integer): Useful for semi-auto or burst weapons,
-* [`Shoot_Delay_After_Scope`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Scoping#shoot\_delay\_after\_scope-integer): The time players cannot shoot after scoping in. Useful for heavy sniper weapons.
-* [`Weapon_Equip_Delay`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Information#weapon\_equip\_delay-integer): Time time players cannot shoot after equipping their weapon. Useful for heavy weapons.
-* [`Reload`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Reloading#reload\_duration-integer): Reload complete time
-* [`Firearm_Actions`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Firearms#open): Firearm open/close times.
-* [`Melee_Hit_Delay`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Melee#melee\_hit\_delay-integer): Time after hitting an enemy to recharge.
-* [`Melee_Miss_Delay`](https://github.com/WeaponMechanics/MechanicsMain/wiki/Melee#melee\_miss): Time after missing an enemy to recharge.
+* [Delay\_Between\_Shots](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/shoot#delay\_between\_shots "mention") -> Useful for semi-auto for burst weapons
+* [Shoot\_Delay\_After\_Scope](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/scope#shoot\_delay\_after\_scope "mention") -> The time players cannot shoot after scoping in.
+* [Weapon\_Equip\_Delay](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/info#weapon\_equip\_delay "mention") -> The time players cannot shoot after equipping their weapons.
+* [Reload\_Duration](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/reload#reload\_duration "mention") -> Total time to complete reload
+* [Firearm\_Action](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/firearm\_action "mention") -> Time to open/close weapon
+* [Melee\_Hit\_Delay](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/melee#melee\_hit\_delay "mention") -> Delay to hit again after hitting a swing
+* [Melee\_Miss](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/melee#melee\_miss "mention") -> Delay to hit again after missing a swing
 
 ### Timer Serializer
 
@@ -45,13 +45,19 @@ Each option here uses the Timer serializer.
 
 Whenever you see `<Message>`, you can use two additional placeholders:
 
-* `%time%`: The `x.x` amount of time left. Updates every two ticks.
-* `%bar%`: Shows the bar defined by `Bar`. See the example below.
+* `<time>`: The `x.x` amount of time left. Updates every two ticks.
+* `<bar>`: Shows the bar defined by `Bar`. See the example below.
 
 ## Item\_Cooldown
 
-Uses the 1.9 pearl cooldown for your items. Note that this will show for all items of the same material (but it won't affect anything).\
+Uses the pearl cooldown for your items..\
 ![pearl](https://user-images.githubusercontent.com/43940682/182694676-26306d42-7015-4b96-83fc-04dc46c11668.png)
+
+{% hint style="danger" %}
+Due to Minecraft limitations, this cooldown shows for all items of the same type. This means that if your weapon is a feather, this cooldown will show for ALL feather items.
+
+This effect is only visual, and does not prevent using the item.&#x20;
+{% endhint %}
 
 ## Exp
 
@@ -81,18 +87,19 @@ The message to put in the subtitle. Can use `<time>` and `<bar>`. The subtitle f
 
 The boss bar is shown at the top of the screen.
 
-* `Message`: The title of the boss bar. Can use `<time>` and `<bar>`.
-* `Color`: One of `PINK`, `BLUE`, `RED`, `GREEN`, `YELLOW`, `PURPLE`, `WHITE`
-* `Style`: One of `PROGRESS`, `NOTCHED_6`, `NOTCHED_10`, `NOTCHED_12`, `NOTCHED_20`
+* `Message` -> The title of the boss bar. Can use `<time>` and `<bar>`.
+* `Color` -> One of `PINK`, `BLUE`, `RED`, `GREEN`, `YELLOW`, `PURPLE`, `WHITE`
+* `Style` -> One of `PROGRESS`, `NOTCHED_6`, `NOTCHED_10`, `NOTCHED_12`, `NOTCHED_20`
 
 ## Bar
 
 This section replaces all instances of `<bar>` in your messages. It's a nice visual way to show a progress bar without using the `Exp` or `Boss_Bar` feature.
 
-* `Left_Color`: A [message color code](https://github.com/WeaponMechanics/MechanicsMain/wiki/General#message-color-codes).
-* `Right_Color`: A [message color code](https://github.com/WeaponMechanics/MechanicsMain/wiki/General#message-color-codes) that is **DIFFERENT** then `Left_Color`.
-* `Left_Symbol`: The symbol to use for the bar. I recommend using one character. Try: `|`, or `:`.
-* `Right_Symbol`: If you want to use different symbols, you can use another one character symbol. I recommend skipping this feature.
+* `Left_Color` -> A message color code, like `<red>`
+* `Right_Color` -> A message color code that is **DIFFERENT** then `Left_Color`.
+* `Left_Symbol` -> The symbol to use for the bar. I recommend using one character. Try: `|`, or `:`.
+* `Right_Symbol` -> If you want to use different symbols, you can use another one character symbol. I recommend skipping this feature.
+* `Symbol_Amount` -> The amount of symbols to use in a full bar.
 
 ### Examples
 

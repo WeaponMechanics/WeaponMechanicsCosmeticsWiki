@@ -1,4 +1,8 @@
-# General
+---
+description: The cosmetics module for the weapon
+---
+
+# Cosmetics
 
 ```yaml
   Cosmetics:
@@ -42,12 +46,12 @@ Example: `<red><damage>`
 
 ## Death\_Messages
 
-When a player is killed by this gun, 1 message is randomly selected from this list. You can use `%shooter%` to show the name of the shooter, and `%victim%` for the player being killed.
+When a player is killed by this gun, 1 message is randomly selected from this list. You can use `<source_name>` to show the name of the shooter, and `<target_name>` for the player being killed.
 
 ```yaml
     Death_Messages:
-      - "<yellow>%victim% was killed by the big iron on %shooter%'s hip"
-      - "<rainbow>%shooter% didn't care that he was after %victim%"
+      - "<yellow><target_name> was killed by the big iron on <source_name>'s hip"
+      - "<rainbow><source_name> didn't care that he was after <target_name>"
 ```
 
 ## Splash\_Mechanics
@@ -62,6 +66,10 @@ These [mechanics](https://github.com/WeaponMechanics/MechanicsMain/wiki/General#
       - "Particle{particle=WATER_SPLASH, count=20, noise=0.2 0.2 0.2} @Target{}"
 ```
 
+{% hint style="info" %}
+This feature should only be used when the projectile's [Type](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/projectile#type "mention") is `"INVISIBLE"`. Projectiles with disguises have splash effects that are automatically added by the vanilla Minecraft client.&#x20;
+{% endhint %}
+
 ## Bullet\_Zip
 
 When a bullet flies past your ear, since it is moving so fast, you hear a ["zip" sound](https://youtu.be/ZpCu4bEUuQM?t=163). This adds an essential layer of immersion to your guns... It allows players to "feel" the bullets flying past them.
@@ -69,9 +77,9 @@ When a bullet flies past your ear, since it is moving so fast, you hear a ["zip"
 * `Maximum_Distance`: \<distance>
   * Defines how far away the player can hear the "zip" from.
   * This **MUST** be a small number... Less than eight blocks for best results.
-* `Sounds`: \<Mechanics>
-  * The [Sounds](https://github.com/WeaponMechanics/MechanicsMain/wiki/General#sounds-string-list) to play.
-  * The resource pack comes with a custom sound for this: `custom:fx.whiz`
+* `Sounds`:
+  * The [Mechanics](http://127.0.0.1:5000/o/MgHAZkcfIhs3YcmBjk2r/s/hz7yMxlL81NxAT44nraH/ "mention") to trigger
+  * The resource pack comes with a custom sound for this: `fx.whiz`
   * `@Target{}` targets the entity that should hear the sound and the point the projectile zips by at.
 
 ```yaml

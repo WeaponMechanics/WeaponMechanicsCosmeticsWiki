@@ -1,3 +1,7 @@
+---
+description: Spawn particles behind projectiles
+---
+
 # Trails
 
 {% embed url="https://www.youtube.com/watch?v=BbzydkqSgYU" %}
@@ -78,23 +82,45 @@ Lets you define a horizontal and vertical offset.&#x20;
 
 ## Shape\_Data
 
-* `Radius`: How far away from the projectile to spawn the spiral particles
-* `Points`: How many points will the circle have? Bigger numbers = more detail. Recommend 16 or higher.
-* `Loops`: How many spirals should we draw at once?
-* `Function`: A polar equation that supports math operations. Try `"2 * cos(4 * theta)"`.
+* `Radius` -> How far away from the projectile to spawn the spiral particles
+* `Points` -> How many points will the circle have? Bigger numbers = more detail. Recommend 16 or higher.
+* `Loops` -> How many spirals should we draw at once?
+* `Function` -> A polar equation that supports math operations. Try `"2 * cos(4 * theta)"`.
   * If you use `PARAMETRIC`, use a [parametric equation](https://en.wikipedia.org/wiki/Parametric\_equation).
   * Separate two equations with a comma. Try `"0.1805,0.0805"`
   * This also supports equations. Try `"0.1805 / exp(-theta), 0.0805 / exp(-theta)"`
-* `Cache`: Use true to calculate the values once and store them. 99% of the time, you want this to be true.
+* `Cache` -> Use true to calculate the values once and store them. 99% of the time, you want this to be true.
 
 ## Particle\_Chooser
 
 Defines how to choose particles from the following list.
 
-* `STOP`: After we reach the last particle in the list, repeat that last particle for the rest of the trail.
-* `RANDOM`: Always choose a random particle from the list.
-* `LOOP`: After we reach the last particle in the list, restart at the beginning.
+{% tabs %}
+{% tab title="STOP" %}
+Loop through the particle list 1 time. Once we reach the end of the list, repeat the last particle for the rest of the trail.
+{% endtab %}
+
+{% tab title="RANDOM" %}
+Always chose a random particle from the list.
+{% endtab %}
+
+{% tab title="LOOP" %}
+After we reach the last particle in the list, restart from the beginning.
+{% endtab %}
+{% endtabs %}
 
 ## Particles
 
 This list of particles will be spawned to visualize the trail. Check out the [Particle](http://127.0.0.1:5000/s/hz7yMxlL81NxAT44nraH/mechanics/particle "mention") mechanic to learn how to create particles.
+
+### Example
+
+This example spawns 3 smoke particles with some variation every 1 block. This effectively makes small smoke clouds every block.
+
+```yaml
+  Trail:
+    Distance_Between_Particles: 1.0
+    Particle_Chooser: LOOP
+    Particles:
+      - "Particle{particle=SMOKE_NORMAL, count=3, noise=0.01 0.01 0.01}"
+```
