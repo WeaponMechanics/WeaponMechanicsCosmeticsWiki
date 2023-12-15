@@ -56,9 +56,10 @@ When a player is killed by this gun, 1 message is randomly selected from this li
 
 ## Splash\_Mechanics
 
-These [mechanics](https://github.com/WeaponMechanics/MechanicsMain/wiki/General#mechanics) are played whenever a projectile from this weapon enters the water. It's nice to have a quick splash sound and splash particle.
+These mechanics to trigger whenever a projectile from this weapon enters the water. It's nice to have a quick splash sound and splash particle. Uses [Mechanics](https://app.gitbook.com/o/MgHAZkcfIhs3YcmBjk2r/s/hz7yMxlL81NxAT44nraH/ "mention").
 
-`@Target{}` targets the point the projectile hit the water.
+* `@Source{}` -> the current location of the projectile (usually deeper into the water!)
+* `@Target{}` -> targets the point the projectile hit the water.
 
 ```yaml
     Splash_Mechanics:
@@ -67,18 +68,26 @@ These [mechanics](https://github.com/WeaponMechanics/MechanicsMain/wiki/General#
 ```
 
 {% hint style="info" %}
-This feature should only be used when the projectile's [Type](http://127.0.0.1:5000/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/projectile#type "mention") is `"INVISIBLE"`. Projectiles with disguises have splash effects that are automatically added by the vanilla Minecraft client.&#x20;
+This feature should only be used when the projectile's [Type](https://app.gitbook.com/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/projectile#type "mention") is `"INVISIBLE"`. Projectiles with disguises have splash effects that are automatically added by the vanilla Minecraft client.&#x20;
+{% endhint %}
+
+## Block\_Hit\_Mechanics
+
+The mechanics to trigger whenever a projectile hits a block. Uses [Mechanics](https://app.gitbook.com/o/MgHAZkcfIhs3YcmBjk2r/s/hz7yMxlL81NxAT44nraH/ "mention")
+
+{% hint style="info" %}
+WeaponMechanicsCosmetics automatically adds block impact sounds and particles to all weapons depending on the block that is hit. You can configure those settings in <mark style="color:yellow;">**your server -> plugins -> WeaponMechanicsCosmetics -> config.yml**</mark>
 {% endhint %}
 
 ## Bullet\_Zip
 
 When a bullet flies past your ear, since it is moving so fast, you hear a ["zip" sound](https://youtu.be/ZpCu4bEUuQM?t=163). This adds an essential layer of immersion to your guns... It allows players to "feel" the bullets flying past them.
 
-* `Maximum_Distance`: \<distance>
+* `Maximum_Distance`
   * Defines how far away the player can hear the "zip" from.
   * This **MUST** be a small number... Less than eight blocks for best results.
-* `Sounds`:
-  * The [Mechanics](http://127.0.0.1:5000/o/MgHAZkcfIhs3YcmBjk2r/s/hz7yMxlL81NxAT44nraH/ "mention") to trigger
+* `Sounds`
+  * The [Mechanics](https://app.gitbook.com/o/MgHAZkcfIhs3YcmBjk2r/s/hz7yMxlL81NxAT44nraH/ "mention") to trigger
   * The resource pack comes with a custom sound for this: `fx.whiz`
   * `@Target{}` targets the entity that should hear the sound and the point the projectile zips by at.
 
