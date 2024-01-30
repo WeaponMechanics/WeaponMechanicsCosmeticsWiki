@@ -13,4 +13,4 @@ To install the plugin:
 
 ### Other
 
-WeaponMechanics(Cosmetics) is difficult to configure. This wiki should be used in conjunction with the [WeaponMechanics](http://127.0.0.1:5000/o/MgHAZkcfIhs3YcmBjk2r/s/nwFaVZ2SN7YPdxsP5G6f/ "mention") wiki.&#x20;
+WeaponMechanics(Cosmetics) is difficult to configure. This wiki should be used in conjunction with the [WeaponMechanics](https://app.gitbook.com/o/MgHAZkcfIhs3YcmBjk2r/s/nwFaVZ2SN7YPdxsP5G6f/ "mention") wiki.&#x20;
