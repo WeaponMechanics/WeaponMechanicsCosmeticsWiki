@@ -4,6 +4,10 @@ description: The hand module
 
 # Hand
 
+{% hint style="danger" %}
+The `Hand` feature does not work for Creative players. This is a Minecraft limitation, and cannot be fixed. The `Hand` feature is only intended to work for players in survival mode.
+{% endhint %}
+
 This feature lets you put a fake item in the offhand of the player. As the module's name (Hand) suggests, this is usually used to put a fake hand item in the offhand which is specially positioned to look like it is "holding up" the weapon. This is especially convincing for large weapons, or 2 handed weapons.
 
 This can also be used for scope reticles.
@@ -51,4 +55,4 @@ AK_47:
       <another attachment>: ADD <integer>
 ```
 
-All config options work the same as [Skin](https://app.gitbook.com/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/skin "mention"), check out that wiki for more information.
+All config options work the same as [Skin](https://app.gitbook.com/s/nwFaVZ2SN7YPdxsP5G6f/weapon-modules/skin "mention"), check out that wiki for more information.\
