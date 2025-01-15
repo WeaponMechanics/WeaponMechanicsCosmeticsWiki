@@ -157,7 +157,7 @@ In this example, bedrock, obsidian, and netherite cannot be damaged. Any materia
         - dirt BREAK 4
 ```
 
-## Crossbow
+## Third\_Person\_Pose
 
 {% hint style="warning" %}
 This feature only works for OTHER PLAYERS who are looking at you. You _CANNOT_ see this effect in the third person. This is due to a Minecraft limitation, and cannot be fixed by us.
