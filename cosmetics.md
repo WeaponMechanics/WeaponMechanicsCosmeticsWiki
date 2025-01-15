@@ -24,10 +24,12 @@ description: The cosmetics module for the weapon
       Default_Mask: <Material>
       Blocks:
         - <Material*> <CANCEL/BREAK/CRACK*> <ShotsToBreakBlock> <Mask>
-    Crossbow:
-      Item: <ItemSerializer>
-      Only_When_Scoping: <true/false>
-      Copy_Custom_Model_Data: <true/false>
+    Third_Person_Pose:
+      Default: <Animation>
+      Scope: <Animation>
+      Reload: <Animation>
+      Firearm_Action: <Animation>
+      
 ```
 
 ## Muzzle\_Flash
@@ -157,70 +159,14 @@ In this example, bedrock, obsidian, and netherite cannot be damaged. Any materia
 
 ## Crossbow
 
-This feature only works for OTHER PLAYERS who are looking at you. You _CANNOT_ see this effect in the third person. This is due to a Minecraft limitation, and it will not be fixed.
+{% hint style="warning" %}
+This feature only works for OTHER PLAYERS who are looking at you. You _CANNOT_ see this effect in the third person. This is due to a Minecraft limitation, and cannot be fixed by us.
+{% endhint %}
 
-`Crossbow` allows other players to see the gun held upward as if the player is aiming the weapon from the shoulder. You need to configure the `crossbow.json` file in your resource pack. Check the example below.
+Valid animation types are: `NONE/EAT/DRINK/BLOCK/BOW/SPEAR/CROSSBOW/SPYGLASS/TOOT_HORN/BRUSH/BUNDLE`. I personally recommend using `BOW`, since it looks like it is aiming the weapon at the crosshair.&#x20;
 
-* `Item`:
-  * This is the item shown to other players.
-  * This defaults to the item defined in `Skin`
-  * Your item _should_ be `Type: CROSSBOW`
-* `Only_When_Scoping`:
-  * When `true`, the crossbow pose will only be shown if the player aims with the weapon.
-* `Copy_Custom_Model_Data`:
-  * When `true`, the custom model data of the held weapon will be applied to the crossbow.
-
-<details>
-
-<summary>Example + .json information</summary>
-
-```yaml
-    Crossbow:
-      Only_When_Scoping: true
-```
-
-To create the `crossbow.json` file...
-
-1. Find the .json file containing all of your models (This is `feather.json` for the WM pack)
-2. Copy and paste the file, and rename it to `crossbow.json`
-3. Open your new `crossbow.json` file
-4. Delete lines from the START of the file up until `"overrides"`
-5. Replace that with the following:
-
-```json
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "item/crossbow_standby"
-    },
-    "display": {
-        "thirdperson_righthand": {
-            "rotation": [ -90, 0, -60 ],
-            "translation": [ 2, 0.1, -3 ],
-            "scale": [ 0.9, 0.9, 0.9 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ -90, 0, 30 ],
-            "translation": [ 2, 0.1, -3 ],
-            "scale": [ 0.9, 0.9, 0.9 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ -90, 0, -55 ],
-            "translation": [ 1.13, 3.2, 1.13],
-            "scale": [ 0.68, 0.68, 0.68 ]
-        },
-        "firstperson_lefthand": {
-            "rotation": [ -90, 0, 35 ],
-            "translation": [ 1.13, 3.2, 1.13],
-            "scale": [ 0.68, 0.68, 0.68 ]
-        }
-    },
-    "overrides": [
-        {"predicate": {"pulling": 1}, "model": "item/crossbow_pulling_0"},
-        {"predicate": {"pulling": 1, "pull": 0.58}, "model": "item/crossbow_pulling_1"},
-        {"predicate": {"pulling": 1, "pull": 1.0}, "model": "item/crossbow_pulling_2"},
-        {"predicate": {"charged": 1}, "model": "item/crossbow_arrow"},
-        {"predicate": {"charged": 1, "firework": 1}, "model": "item/crossbow_firework"},
-```
-
-</details>
+* `Default`: when the player holds a weapon, but is not doing any specific action
+* `Scope`: when the player is zooming in with their weapon
+* `Reload`: when the player is actively reloading their weapon
+* `Firearm_Action`: when a firearm action open/close is currently in progress
+  * I recommend using `CROSSBOW` here, especially for lever action rifles.
