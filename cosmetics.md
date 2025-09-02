@@ -170,3 +170,17 @@ Valid animation types are: `NONE/EAT/DRINK/BLOCK/BOW/SPEAR/CROSSBOW/SPYGLASS/TOO
 * `Reload`: when the player is actively reloading their weapon
 * `Firearm_Action`: when a firearm action open/close is currently in progress
   * I recommend using `CROSSBOW` here, especially for lever action rifles.
+
+You can also add an "item overlay" to replace the weapon item. This lets you show different models in 3rd person. In this case, just set `Pose:` to your old pose, and now use `Override_Visual_Item:`... Here is an example:
+
+```yaml
+    Third_Person_Pose:
+      Default: NONE
+      Scope: 
+        Pose: BOW
+        Override_Visual_Item: # Completely replaces the item that would normally be sent to the user
+          Type: chorus_fruit
+          Custom_Model_Data: 400
+      Reload: BLOCK
+      Firearm_Action: CROSSBOW
+```
